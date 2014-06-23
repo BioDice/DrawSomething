@@ -34,6 +34,8 @@ public:
 	afx_msg void OnShapeCircle();
 	afx_msg void OnShapeSquare();
 	afx_msg void OnShapeEllipse();
+	afx_msg void OnFileSave32776();
+	afx_msg void OnFileOpen32777();
 };
 
 extern CDrawSomethingApp theApp;

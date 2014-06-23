@@ -23,6 +23,8 @@ BEGIN_MESSAGE_MAP(CDrawSomethingApp, CWinApp)
 	ON_COMMAND(ID_SHAPE_CIRCLE, &CDrawSomethingApp::OnShapeCircle)
 	ON_COMMAND(ID_SHAPE_SQUARE, &CDrawSomethingApp::OnShapeSquare)
 	ON_COMMAND(ID_SHAPE_ELLIPSE, &CDrawSomethingApp::OnShapeEllipse)
+	ON_COMMAND(ID_FILE_SAVE32776, &CDrawSomethingApp::OnFileSave32776)
+	ON_COMMAND(ID_FILE_OPEN32777, &CDrawSomethingApp::OnFileOpen32777)
 END_MESSAGE_MAP()
 
 
@@ -186,3 +188,14 @@ void CDrawSomethingApp::OnShapeEllipse()
 {
 	Ctrl->setShape(Controller::DrawShape::Ellipse);
 }
+
+
+void CDrawSomethingApp::OnFileSave32776()
+{
+	Ctrl->Save();
+}
+
+
+void CDrawSomethingApp::OnFileOpen32777()
+{
+	Ctrl->Open();

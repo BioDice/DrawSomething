@@ -5,7 +5,7 @@
 
 #pragma once
 
-
+#include "Shape.h"
 // CChildView window
 
 class CChildView : public CWnd
@@ -29,6 +29,7 @@ public:
 	virtual ~CChildView();
 
 	CPoint StartPoint, LastPoint;
+	Shape *currentShape;
 	enum CMouseMode{Ready, Clicked, Moving} MouseMode;	
 
 	// Generated message map functions
@@ -39,6 +40,7 @@ protected:
 private:
 	void DrawFinal(CPoint EndPoint);
 	void DrawAuxiliary(CPoint EndPoint);
+
 public:
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
 	afx_msg void OnLButtonUp(UINT nFlags, CPoint point);

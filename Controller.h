@@ -1,16 +1,21 @@
 #pragma once
 #include "MainFrm.h"
 #include "Shape.h"
+#include <vector>
+#include <iostream>
+#include <fstream>
+#include <sstream>
 
 class Controller
 {
 public:
-	static enum DrawShape{None, Square, Rectangle, Circle, Ellipse} Shapes;
+	static enum DrawShape{ None, Square, Rectangle, Circle, Ellipse } Shapes;
 
 private:
 	CMainFrame *mainFrame;
 	CChildView *view;
 	DrawShape currentShape;
+	std::vector<Shape*> shapes;
 
 public:
 	Controller();
@@ -21,10 +26,9 @@ public:
 
 	void setShape(DrawShape shape);
 	Shape* getShape(CDC *pdc);
-	DrawShape getShape()
-	{
-		return currentShape;
-	}
+	DrawShape getShape() { return currentShape; }
+	void Save();
+	void Open();
 
 };
 

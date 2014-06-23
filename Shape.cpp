@@ -10,14 +10,11 @@ Shape::Shape(CDC *pdc)
 
 Shape::~Shape(void)
 {
-}
-
-void Shape::DrawShape(CPoint start, CPoint end)
-{
 
 }
 
-void Shape::DrawAuxiliary(CPoint start, CPoint end)
-{
+void Shape::DrawShape(CPoint start, CPoint end) { }
 
-}
+void Shape::DrawAuxiliary(CPoint start, CPoint end) { }
+
+string Shape::ToString() { return nullptr; }

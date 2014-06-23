@@ -1,44 +1,26 @@
-C:\USERS\MARTIJN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\DRAWSOMETHING\DRAWSOMETHING\DEBUG\DRAWSOMETHING.PCH
-C:\USERS\MARTIJN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\DRAWSOMETHING\DRAWSOMETHING\DEBUG\STDAFX.OBJ
-C:\USERS\MARTIJN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\DRAWSOMETHING\DRAWSOMETHING\DEBUG\VC110.PDB
-C:\USERS\MARTIJN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\DRAWSOMETHING\DRAWSOMETHING\DEBUG\CHILDVIEW.OBJ
-C:\USERS\MARTIJN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\DRAWSOMETHING\DRAWSOMETHING\DEBUG\CONTROLLER.OBJ
-C:\USERS\MARTIJN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\DRAWSOMETHING\DRAWSOMETHING\DEBUG\DRAWSOMETHING.OBJ
-C:\USERS\MARTIJN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\DRAWSOMETHING\DRAWSOMETHING\DEBUG\MAINFRM.OBJ
-C:\USERS\MARTIJN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\DRAWSOMETHING\DRAWSOMETHING\DEBUG\SCIRCLE.OBJ
-C:\USERS\MARTIJN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\DRAWSOMETHING\DRAWSOMETHING\DEBUG\SHAPE.OBJ
-C:\USERS\MARTIJN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\DRAWSOMETHING\DRAWSOMETHING\DEBUG\SRECTANGLE.OBJ
-C:\USERS\MARTIJN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\DRAWSOMETHING\DEBUG\DRAWSOMETHING.ILK
-C:\USERS\MARTIJN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\DRAWSOMETHING\DEBUG\DRAWSOMETHING.EXE
-C:\USERS\MARTIJN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\DRAWSOMETHING\DEBUG\DRAWSOMETHING.PDB
-C:\USERS\MARTIJN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\DRAWSOMETHING\DRAWSOMETHING\DEBUG\DRAWSOMETHING.RES
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\ChildView.obj
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\Controller.obj
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\DrawSomething.obj
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\MainFrm.obj
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\sCircle.obj
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\Shape.obj
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\sRectangle.obj
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\stdafx.obj
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\cl.command.1.tlog
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\CL.read.1.tlog
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\CL.write.1.tlog
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\link-cvtres.read.1.tlog
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\link-cvtres.write.1.tlog
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\link-mt.read.1.tlog
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\link-mt.write.1.tlog
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\link-rc.read.1.tlog
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\link-rc.write.1.tlog
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\link.command.1.tlog
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\link.read.1.tlog
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\link.write.1.tlog
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\rc.command.1.tlog
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\rc.read.1.tlog
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\rc.write.1.tlog
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\DrawSomething.res
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\DrawSomething.pch
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\vc110.idb
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\DrawSomething\Debug\vc110.pdb
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\Debug\DrawSomething.pdb
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\Debug\DrawSomething.exe
-C:\Users\Martijn\Documents\Visual Studio 2012\Projects\DrawSomething\Debug\DrawSomething.ilk
+C:\USERS\MARTIJN\DOCUMENTS\GITHUB\DRAWSOMETHING\DEBUG\DRAWSOMETHING.PCH
+C:\USERS\MARTIJN\DOCUMENTS\GITHUB\DRAWSOMETHING\DEBUG\STDAFX.OBJ
+C:\USERS\MARTIJN\DOCUMENTS\GITHUB\DRAWSOMETHING\DEBUG\VC110.PDB
+C:\USERS\MARTIJN\DOCUMENTS\GITHUB\DRAWSOMETHING\DEBUG\CHILDVIEW.OBJ
+C:\USERS\MARTIJN\DOCUMENTS\GITHUB\DRAWSOMETHING\DEBUG\DRAWSOMETHING.OBJ
+C:\USERS\MARTIJN\DOCUMENTS\GITHUB\DRAWSOMETHING\DEBUG\SELLIPSE.OBJ
+C:\USERS\MARTIJN\DOCUMENTS\GITHUB\DRAWSOMETHING\DEBUG\MAINFRM.OBJ
+C:\USERS\MARTIJN\DOCUMENTS\GITHUB\DRAWSOMETHING\DEBUG\SCIRCLE.OBJ
+C:\USERS\MARTIJN\DOCUMENTS\GITHUB\DRAWSOMETHING\DEBUG\SHAPE.OBJ
+C:\USERS\MARTIJN\DOCUMENTS\GITHUB\DRAWSOMETHING\DEBUG\SRECTANGLE.OBJ
+C:\USERS\MARTIJN\DOCUMENTS\GITHUB\DRAWSOMETHING\DEBUG\SSQUARE.OBJ
+C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\ChildView.obj
+C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\DrawSomething.obj
+C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\MainFrm.obj
+C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\sCircle.obj
+C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\sEllipse.obj
+C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\Shape.obj
+C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\sRectangle.obj
+C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\sSquare.obj
+C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\stdafx.obj
+C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\cl.command.1.tlog
+C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\CL.read.1.tlog
+C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\CL.write.1.tlog
+C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\DrawSomething.pch
+C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\vc110.idb
+C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\vc110.pdb

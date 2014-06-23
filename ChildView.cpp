@@ -7,7 +7,6 @@
 #include "ChildView.h"
 
 #include "Controller.h"
-#include "Shape.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -62,9 +61,8 @@ void CChildView::OnPaint()
 
 void CChildView::DrawAuxiliary(CPoint EndPoint)
 {
-	
 	CDC* pDC = GetDC();
-	Shape *shape = Ctrl->getShape(pDC);
+	//Shape *shape = Ctrl->getShape(pDC);
 	CPen pen;
 	pDC->SelectStockObject(HOLLOW_BRUSH);
 	pen.CreatePen(PS_DOT, 1, RGB(255,0,0));
@@ -72,32 +70,21 @@ void CChildView::DrawAuxiliary(CPoint EndPoint)
 	//pDC->SelectStockObject(BLACK_PEN);
 	pDC->SetROP2(R2_NOTXORPEN);
 	if(MouseMode == Moving)
-		shape->DrawAuxiliary(StartPoint, LastPoint);
-	shape->DrawAuxiliary(StartPoint, EndPoint);
+		currentShape->DrawAuxiliary(StartPoint, LastPoint);
+	currentShape->DrawAuxiliary(StartPoint, EndPoint);
 
 	ReleaseDC(pDC);
 	LastPoint = EndPoint;
-	shape->~Shape();
+	//shape->~Shape();
 }
 
 void CChildView::DrawFinal(CPoint EndPoint)
 {
 	CDC* pDC = GetDC();
-	Shape *shape = Ctrl->getShape(pDC);
 	pDC->SelectStockObject(WHITE_BRUSH);
 	pDC->SelectStockObject(BLACK_PEN);
 	pDC->SetROP2(R2_COPYPEN);
-	shape->DrawShape(StartPoint, EndPoint);
-
-	{
-		RECT r;
-		r.left = StartPoint.x;
-		r.top = StartPoint.y;
-		r.bottom = LastPoint.y;
-		r.right = LastPoint.x;
-
-		//pDC->DrawTextW(L"Há!", &r, 0);
-	}
+	currentShape->DrawShape(StartPoint, EndPoint);
 	
 	ReleaseDC(pDC);
 }
@@ -105,17 +92,21 @@ void CChildView::DrawFinal(CPoint EndPoint)
 
 void CChildView::OnLButtonDown(UINT nFlags, CPoint point)
 {
-	if (Ctrl->getShape() != Controller::None)
+	CDC* pDC = GetDC();
+	currentShape = Ctrl->getShape(pDC);
+	if (currentShape != nullptr)
 	{
 		StartPoint = point;
 		MouseMode = Clicked;
 	}
+
+	ReleaseDC(pDC);
 }
 
 
 void CChildView::OnLButtonUp(UINT nFlags, CPoint point)
 {
-	if (Ctrl->getShape() != Controller::None)
+	if (currentShape != nullptr)
 	{
 		DrawFinal(point);
 		MouseMode = Ready;
@@ -125,7 +116,7 @@ void CChildView::OnLButtonUp(UINT nFlags, CPoint point)
 
 void CChildView::OnMouseMove(UINT nFlags, CPoint point)
 {
-	if (MouseMode != Ready && Ctrl->getShape() != Controller::None)
+	if (MouseMode != Ready && currentShape != nullptr)
 	{
 		if(!(nFlags & MK_LBUTTON)) // might have missed mouse up
 		{

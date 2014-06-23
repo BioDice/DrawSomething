@@ -9,5 +9,6 @@ public:
 
 	void DrawShape(CPoint start, CPoint end);
 	void DrawAuxiliary(CPoint start, CPoint end);
+	string ToString();
 };
 
