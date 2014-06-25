@@ -34,8 +34,20 @@ public:
 	afx_msg void OnShapeCircle();
 	afx_msg void OnShapeSquare();
 	afx_msg void OnShapeEllipse();
+	afx_msg void OnShapePolygon();
 	afx_msg void OnFileSave32776();
 	afx_msg void OnFileOpen32777();
+	afx_msg void ShapeColorGreen();
+	afx_msg void ShapeColorRed();
+	afx_msg void ShapeColorBlue();
+	afx_msg void ShapeColorYellow();
+	afx_msg void LineType();
+	afx_msg void IncrLineThickness();
+	afx_msg void DecrLineThickness();
+	afx_msg void SelectShapeObject();
+	afx_msg void OnEditUndo();
+	afx_msg void DeleteShape();
+	afx_msg void Connector();
 };
 
 extern CDrawSomethingApp theApp;

@@ -23,8 +23,20 @@ BEGIN_MESSAGE_MAP(CDrawSomethingApp, CWinApp)
 	ON_COMMAND(ID_SHAPE_CIRCLE, &CDrawSomethingApp::OnShapeCircle)
 	ON_COMMAND(ID_SHAPE_SQUARE, &CDrawSomethingApp::OnShapeSquare)
 	ON_COMMAND(ID_SHAPE_ELLIPSE, &CDrawSomethingApp::OnShapeEllipse)
+	ON_COMMAND(ID_SHAPE_POLYGON, &CDrawSomethingApp::OnShapePolygon)
 	ON_COMMAND(ID_FILE_SAVE32776, &CDrawSomethingApp::OnFileSave32776)
 	ON_COMMAND(ID_FILE_OPEN32777, &CDrawSomethingApp::OnFileOpen32777)
+	ON_COMMAND(COLOR_GREEN, &CDrawSomethingApp::ShapeColorGreen)
+	ON_COMMAND(COLOR_RED, &CDrawSomethingApp::ShapeColorRed)
+	ON_COMMAND(COLOR_BLUE, &CDrawSomethingApp::ShapeColorBlue)
+	ON_COMMAND(COLOR_YELLOW, &CDrawSomethingApp::ShapeColorYellow)
+	ON_COMMAND(LINE_TYPE, &CDrawSomethingApp::LineType)
+	ON_COMMAND(INCREMENT_LINE_THICKNESS, &CDrawSomethingApp::IncrLineThickness)
+	ON_COMMAND(DECREASE_LINE_THICKNESS, &CDrawSomethingApp::DecrLineThickness)
+	ON_COMMAND(SELECT_SHAPE_OBJECT, &CDrawSomethingApp::SelectShapeObject)
+	ON_COMMAND(ID_EDIT_UNDO, &CDrawSomethingApp::OnEditUndo)
+	ON_COMMAND(DELETE_SHAPE, &CDrawSomethingApp::DeleteShape)
+	ON_COMMAND(CONNECTOR, &CDrawSomethingApp::Connector)
 END_MESSAGE_MAP()
 
 
@@ -162,6 +174,7 @@ void CDrawSomethingApp::OnAppAbout()
 {
 	CAboutDlg aboutDlg;
 	aboutDlg.DoModal();
+
 }
 
 // CDrawSomethingApp message handlers
@@ -189,6 +202,10 @@ void CDrawSomethingApp::OnShapeEllipse()
 	Ctrl->setShape(Controller::DrawShape::Ellipse);
 }
 
+void CDrawSomethingApp::OnShapePolygon()
+{
+	Ctrl->setShape(Controller::DrawShape::Polygon);
+}
 
 void CDrawSomethingApp::OnFileSave32776()
 {
@@ -199,3 +216,66 @@ void CDrawSomethingApp::OnFileSave32776()
 void CDrawSomethingApp::OnFileOpen32777()
 {
 	Ctrl->Open();
+}
+
+void CDrawSomethingApp::ShapeColorGreen()
+{
+	Ctrl->SetSelectedShapeColor(Controller::ShapeColor::GREEN);
+}
+
+void CDrawSomethingApp::ShapeColorBlue()
+{
+	Ctrl->SetSelectedShapeColor(Controller::ShapeColor::BLUE);
+}
+
+void CDrawSomethingApp::ShapeColorRed()
+{
+	Ctrl->SetSelectedShapeColor(Controller::ShapeColor::RED);
+}
+
+void CDrawSomethingApp::ShapeColorYellow()
+{
+	Ctrl->SetSelectedShapeColor(Controller::ShapeColor::YELLOW);
+}
+
+void CDrawSomethingApp::LineType()
+{
+	if (Ctrl->currentLineType == PS_SOLID)
+		Ctrl->currentLineType = PS_DOT;
+	else
+		Ctrl->currentLineType = PS_SOLID;
+}
+
+void CDrawSomethingApp::IncrLineThickness()
+{
+	Ctrl->currentLineThickness++;
+}
+
+void CDrawSomethingApp::DecrLineThickness()
+{
+	if (Ctrl->currentLineThickness > 1)
+		Ctrl->currentLineThickness--;
+}
+
+void CDrawSomethingApp::SelectShapeObject()
+{
+	if (!Ctrl->GetSelectTool())
+		Ctrl->SetSelectTool(true);
+	else
+		Ctrl->SetSelectTool(false);
+}
+
+void CDrawSomethingApp::OnEditUndo()
+{
+	Ctrl->UndoLastAction();
+}
+
+void CDrawSomethingApp::DeleteShape()
+{
+	Ctrl->DeleteCurrentShape();
+}
+
+void CDrawSomethingApp::Connector()
+{
+	//Ctrl->UndoLastAction();
+}

@@ -58,6 +58,8 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -67,7 +69,7 @@
     <ResourceCompile>
       <Culture>0x0409</Culture>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -104,6 +106,7 @@
     <ClInclude Include="ChildView.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="DrawSomething.h" />
+    <ClInclude Include="sPolygon.h" />
     <ClInclude Include="sEllipse.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="Resource.h" />
@@ -118,6 +121,7 @@
     <ClCompile Include="ChildView.cpp" />
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="DrawSomething.cpp" />
+    <ClCompile Include="sPolygon.cpp" />
     <ClCompile Include="sEllipse.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="sCircle.cpp" />

@@ -5,10 +5,13 @@ class sSquare :
 	public Shape
 {
 public:
-	sSquare(CDC *pdc);
+	sSquare();
+	sSquare(CPoint start, CPoint end);
 	~sSquare(void);
-	void DrawShape(CPoint start, CPoint end);
-	void DrawAuxiliary(CPoint start, CPoint end);
+	void DrawShape(CDC *pdc, CPoint start, CPoint end);
+	void DrawShape(CDC *pdc);
+	void DrawAuxiliary(CDC *pdc, CPoint start, CPoint end);
 	string ToString();
+	void IsSelected(CDC *pdc);
 };
 

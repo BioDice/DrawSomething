@@ -5,10 +5,13 @@ class sEllipse :
 	public Shape
 {
 public:
-	sEllipse(CDC *pdc);
+	sEllipse();
+	sEllipse(CPoint start, CPoint end);
 	~sEllipse(void);
-	void DrawShape(CPoint start, CPoint end);
-	void DrawAuxiliary(CPoint start, CPoint end);
+	void DrawShape(CDC *pdc, CPoint start, CPoint end);
+	void DrawShape(CDC *pdc);
+	void DrawAuxiliary(CDC *pdc, CPoint start, CPoint end);
 	string ToString();
+	void IsSelected(CDC *pdc);
 };
 

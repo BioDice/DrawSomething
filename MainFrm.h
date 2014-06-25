@@ -18,7 +18,7 @@ public:
 
 // Operations
 public:
-
+	CToolBar* GetToolbar();
 // Overrides
 public:
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);

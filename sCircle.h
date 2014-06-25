@@ -4,10 +4,13 @@ class sCircle :
 	public Shape
 {
 public:
-	sCircle(CDC *pdc);
+	sCircle();
+	sCircle(CPoint start, CPoint end);
 	~sCircle(void);
-	void DrawShape(CPoint start, CPoint end);
-	void DrawAuxiliary(CPoint start, CPoint end);
+	void DrawShape(CDC *pdc, CPoint start, CPoint end);
+	void DrawShape(CDC *pdc);
+	void DrawAuxiliary(CDC *pdc, CPoint start, CPoint end);
 	string ToString();
+	void IsSelected(CDC *pdc);
 };
 

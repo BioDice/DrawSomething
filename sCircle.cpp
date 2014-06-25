@@ -2,32 +2,68 @@
 #include "sCircle.h"
 
 
-sCircle::sCircle(CDC *pdc) : Shape(pdc)
+sCircle::sCircle()
 {
 	name = "Circle";
+}
+
+sCircle::sCircle(CPoint start, CPoint end)
+{
+	name = "Circle";
+	this->start = start;
+	this->end = end;
 }
 
 sCircle::~sCircle(void)
 {
 }
 
-void sCircle::DrawShape(CPoint start, CPoint end)
+void sCircle::DrawShape(CDC *pdc, CPoint start, CPoint end)
 {
-	drawField->Ellipse(start.x, start.y, start.x + (end.x - start.x), start.y + (end.x - start.x));
+	CPen* penne = new CPen(lineType, lineThickness, lineColor);
+	pdc->SelectObject(penne);
+	rect.SetRect(start.x, start.y, start.x + (end.x - start.x), start.y + (end.x - start.x));
+	pdc->Ellipse(rect);
 	this->start = start;
 	this->end = end;
-	//Ctrl->shapes.emplace_back(this);
+	PaintText(pdc);
+	delete penne;
 }
 
-void sCircle::DrawAuxiliary(CPoint start, CPoint end)
+void sCircle::DrawShape(CDC *pdc)
 {
-	drawField->Ellipse(start.x, start.y, start.x + (end.x - start.x), start.y + (end.x - start.x));
+	CPen* penne = new CPen(lineType, lineThickness, lineColor);
+	pdc->SelectObject(penne);
+	rect.SetRect(start.x, start.y, start.x + (end.x - start.x), start.y + (end.x - start.x));
+	pdc->Ellipse(rect);
+	PaintText(pdc);
+	delete penne;
+}
+
+void sCircle::IsSelected(CDC *pdc)
+{
+	CPen* penne = new CPen(PS_DOT, 1, RGB(150,150,150));
+	pdc->SelectObject(penne);
+	pdc->Ellipse(rect);
+	PaintText(pdc);
+	delete penne;
+}
+
+void sCircle::DrawAuxiliary(CDC *pdc, CPoint start, CPoint end)
+{
+	pdc->Ellipse(start.x, start.y, start.x + (end.x - start.x), start.y + (end.x - start.x));
 }
 
 string sCircle::ToString()
 {
-	return "Shape: " + name + "\r\n" +
-		"Color: " + "Red" + "\r\n" +
-		"Points: " + ltos(start.x) + ", " + ltos(start.y) + "; " +
-		ltos(end.x) + ", " + ltos(end.y);
+	CT2CA pszConvertedAnsiString (text);
+	std::string strStd (pszConvertedAnsiString);
+	return name
+		+ "," + ltos(lineType)
+		+ "," + ltos(lineThickness)
+		+ "," + ltos(lineColor)
+		+ "," + strStd //formatted text
+		+ "," + ltos(start.x) + "," + ltos(start.y) 
+		+ "," + ltos(end.x) + "," + ltos(end.y) 
+		+ "\n";
 }
