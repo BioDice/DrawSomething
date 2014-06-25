@@ -24,7 +24,7 @@ void sRectangle::DrawShape(CDC *pdc, CPoint start, CPoint end)
 	pdc->SelectObject(penne);
 	pdc->SetROP2(R2_COPYPEN);
 	rect.SetRect(start.x, start.y, end.x, end.y);
-	//pdc->Rectangle(start.x, start.y, end.x, end.y);
+	rect.NormalizeRect();
 	pdc->Rectangle(rect);
 	this->start = start;
 	this->end = end;
@@ -38,7 +38,7 @@ void sRectangle::DrawShape(CDC *pdc)
 	pdc->SelectObject(penne);
 	pdc->SetROP2(R2_COPYPEN);
 	rect.SetRect(start.x, start.y, end.x, end.y);
-	//pdc->Rectangle(start.x, start.y, end.x, end.y);
+	rect.NormalizeRect();
 	pdc->Rectangle(rect);
 	PaintText(pdc);
 	delete penne;

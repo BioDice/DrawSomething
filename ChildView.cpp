@@ -17,10 +17,12 @@ CChildView::CChildView()
 {
 	MouseMode = Ready;
 	Ctrl = new Controller();
+	this->currentShape = NULL;
 }
 
 CChildView::~CChildView()
 {
+	delete Ctrl;
 }
 
 
@@ -88,7 +90,6 @@ void CChildView::DrawAuxiliary(CPoint EndPoint)
 	pDC->SelectStockObject(HOLLOW_BRUSH);
 	pen.CreatePen(PS_DOT, 1, RGB(255,0,0));
 	pDC->SelectObject(&pen);
-	//pDC->SelectStockObject(BLACK_PEN);
 	pDC->SetROP2(R2_NOTXORPEN);
 	if(MouseMode == Moving)
 		currentShape->DrawAuxiliary(pDC, StartPoint, LastPoint);
@@ -96,7 +97,6 @@ void CChildView::DrawAuxiliary(CPoint EndPoint)
 
 	ReleaseDC(pDC);
 	LastPoint = EndPoint;
-	//shape->~Shape();
 }
 
 void CChildView::DrawFinal(CPoint EndPoint)
@@ -109,11 +109,6 @@ void CChildView::DrawFinal(CPoint EndPoint)
 	currentShape->DrawShape(pDC, StartPoint, EndPoint);
 	
 	ReleaseDC(pDC);
-	/*if (!Ctrl->IsDrawingPolygon)
-	{
-		delete currentShape;
-		currentShape = NULL;
-	}*/
 }
 
 void CChildView::Reset()
@@ -126,6 +121,10 @@ void CChildView::Reset()
 			InvalidateRect(i->GetRect());
 		}
 
+		for ( int i = 0; i < str.size(); i++ )
+		{       
+			delete str[i];    
+		}
 		str.clear();
 		RedrawShapes();
 	}
@@ -133,8 +132,25 @@ void CChildView::Reset()
 
 void CChildView::OnLButtonDown(UINT nFlags, CPoint point)
 {
-	if (Ctrl->selectTool)
+	if (Ctrl->GetConnectTool())
 	{
+		for (int i = Ctrl->shapes.size()-1; i >= 0; i--)
+		{
+			if (Ctrl->shapes[i]->IsOn(point))
+			{
+				CDC* pdc = GetDC();
+				Shape* shape = new sConnector();
+				shape->DrawShape(pdc, currentShape->GetRect().CenterPoint(), Ctrl->shapes[i]->GetRect().CenterPoint());
+				Ctrl->shapes.emplace_back(shape);
+				break;
+			}
+		}
+		return;
+	}
+	else if (Ctrl->GetSelectTool())
+	{
+		RedrawShapes();
+		currentShape = NULL;
 		for (int i = Ctrl->shapes.size()-1; i >= 0; i--)
 		{
 			
@@ -152,7 +168,7 @@ void CChildView::OnLButtonDown(UINT nFlags, CPoint point)
 	}
 	if (!Ctrl->IsDrawingPolygon)
 	{
-		Shape *shape = NULL;
+		Shape* shape = NULL;
 		currentShape = Ctrl->getShape(shape);
 		delete shape;
 	}
@@ -185,7 +201,7 @@ void CChildView::OnLButtonDown(UINT nFlags, CPoint point)
 
 void CChildView::OnLButtonUp(UINT nFlags, CPoint point)
 {
-	if (Ctrl->selectTool)
+	if (Ctrl->GetSelectTool() || Ctrl->GetConnectTool())
 		return;
 	if (currentShape != NULL && Ctrl->currentShape != Controller::DrawShape::Polygon)
 	{
@@ -204,7 +220,7 @@ void CChildView::OnMouseMove(UINT nFlags, CPoint point)
 	}
 	else
 	{
-		if (MouseMode != Ready && currentShape != NULL)
+		if (MouseMode != Ready && currentShape != NULL && !Ctrl->GetConnectTool())
 		{
 			if(!(nFlags & MK_LBUTTON)) // might have missed mouse up
 			{

@@ -19,12 +19,10 @@ class CDrawSomethingApp : public CWinApp
 public:
 	CDrawSomethingApp();
 
-
 // Overrides
 public:
 	virtual BOOL InitInstance();
 	virtual int ExitInstance();
-
 // Implementation
 
 public:

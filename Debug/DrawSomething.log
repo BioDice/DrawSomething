@@ -1,13 +1,15 @@
-﻿Build started 25-6-2014 14:19:28.
+﻿Build started 25-6-2014 22:53:25.
      1>Project "C:\Users\Martijn\Documents\GitHub\DrawSomething\DrawSomething\DrawSomething.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         G:\Visual Studio 2012\VC\bin\CL.exe /c /I"G:\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\DrawSomething.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt sPolygon.cpp
-         sPolygon.cpp
-     1>c:\users\martijn\documents\github\drawsomething\drawsomething\spolygon.cpp(40): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\martijn\documents\github\drawsomething\drawsomething\spolygon.cpp(62): warning C4018: '<' : signed/unsigned mismatch
+         G:\Visual Studio 2012\VC\bin\CL.exe /c /I"G:\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\DrawSomething.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Controller.cpp
+         Controller.cpp
+     1>c:\users\martijn\documents\github\drawsomething\drawsomething\controller.cpp(23): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\martijn\documents\github\drawsomething\drawsomething\controller.cpp(202): warning C4018: '<=' : signed/unsigned mismatch
+     1>c:\users\martijn\documents\github\drawsomething\drawsomething\controller.cpp(276): warning C4018: '<' : signed/unsigned mismatch
        Link:
          G:\Visual Studio 2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\DrawSomething.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"G:\Visual Studio 2012\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\DrawSomething.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Martijn\Documents\GitHub\DrawSomething\Debug\DrawSomething.lib" /MACHINE:X86 Debug\DrawSomething.res
          Debug\ChildView.obj
+         Debug\sConnector.obj
          Debug\Controller.obj
          Debug\DrawSomething.obj
          Debug\sPolygon.obj
@@ -23,4 +25,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.83
+Time Elapsed 00:00:01.19
