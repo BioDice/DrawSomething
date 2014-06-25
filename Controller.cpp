@@ -2,8 +2,12 @@
 #include "Resource.h"
 #include "DrawSomething.h"
 #include "Controller.h"
-#include <vld.h>
-
+#include "sRectangle.h"
+#include "sCircle.h"
+#include "sSquare.h"
+#include "sEllipse.h"
+#include "sPolygon.h"
+//#include <vld.h>
 
 Controller *Ctrl = 0;
 
@@ -15,16 +19,11 @@ Controller::Controller(void) : shapes()
 	this->currentColor = Controller::ShapeColor::RED;
 	this->IsDrawingPolygon = false;
 	this->selectTool = false;
-	this->connectTool = false;
 }
 
 Controller::~Controller(void)
 {
-	for ( int i = 0; i < shapes.size(); i++ ) 
-    {       
-        delete shapes[i];    
-    }
-    shapes.clear(); 
+	delete Ctrl;
 }
 
 void Controller::setMainFrame(CMainFrame *mainFrame)
@@ -105,6 +104,7 @@ Shape* Controller::getShape(Shape* shape)
 			return shape;
 		}
 	}
+
 	return NULL;	
 }
 
@@ -131,8 +131,9 @@ void Controller::Save()
 		}
 
 		file.close();
+
+		//delete fd;
 	}
-	delete fd;
 }
 
 void Controller::Open()
@@ -192,10 +193,6 @@ void Controller::Open()
 				{
 					shape = new sSquare(startp, endp);
 				}
-				else if (shapeType == "Connector")
-				{
-					shape = new sConnector(startp, endp);
-				}
 				else if (shapeType == "Polygon")
 				{
 					shape = new sPolygon(startp, endp);
@@ -223,7 +220,7 @@ void Controller::Open()
 		view->RedrawShapes();
 		file.close();
 	}
-	delete fd;
+	//delete fd;
 }
 
 void Controller::UndoLastAction()
@@ -253,15 +250,10 @@ void Controller::SetSelectTool(bool value)
 {
 	this->selectTool = value;
 	CToolBar *m = mainFrame->GetToolbar();
-	if (value)
-		this->connectTool = false;
+
 	m->GetToolBarCtrl().CheckButton(SELECT_SHAPE_OBJECT, MF_BYCOMMAND | (this->selectTool == true ? MF_CHECKED : MF_UNCHECKED));
-	m->GetToolBarCtrl().CheckButton(CONNECTOR, MF_BYCOMMAND | (this->connectTool == true ? MF_CHECKED : MF_UNCHECKED));
-	if (!value && view->currentShape != NULL)
-	{
-		//delete view->currentShape;
+	if (!value)
 		view->currentShape = NULL;
-	}
 }
 
 bool Controller::GetSelectTool()
@@ -277,7 +269,6 @@ void Controller::DeleteCurrentShape()
 		{
 			if (shapes[i] == view->currentShape)
 			{
-				delete shapes[i];
 				shapes.erase(shapes.begin() + i);
 				view->currentShape = NULL;
 				view->RedrawShapes();
@@ -285,19 +276,4 @@ void Controller::DeleteCurrentShape()
 			}
 		}
 	}
-}
-
-void Controller::SetConnectTool(bool value)
-{
-	this->connectTool = value;
-	CToolBar *m = mainFrame->GetToolbar();
-	if (value)
-		this->selectTool = false;
-	m->GetToolBarCtrl().CheckButton(SELECT_SHAPE_OBJECT, MF_BYCOMMAND | (this->selectTool == true ? MF_CHECKED : MF_UNCHECKED));
-	m->GetToolBarCtrl().CheckButton(CONNECTOR, MF_BYCOMMAND | (this->connectTool == true ? MF_CHECKED : MF_UNCHECKED));
-}
-
-bool Controller::GetConnectTool()
-{
-	return connectTool;
 }

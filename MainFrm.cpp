@@ -43,7 +43,6 @@ CMainFrame::CMainFrame()
 
 CMainFrame::~CMainFrame()
 {
-	delete this;
 }
 
 int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)

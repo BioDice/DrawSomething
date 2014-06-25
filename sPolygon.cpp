@@ -28,8 +28,6 @@ void sPolygon::DrawShape(CDC *pdc, CPoint start, CPoint end)
 	if (points.size() == 0)
 		points.emplace_back(start);
 	points.emplace_back(end);
-
-	delete penne;
 }
 
 void sPolygon::DrawShape(CDC *pdc)
@@ -44,7 +42,6 @@ void sPolygon::DrawShape(CDC *pdc)
 		pdc->MoveTo(points[i]);
 		pdc->LineTo(points[i+1]);
 	}
-	delete penne;
 }
 
 void sPolygon::DrawAuxiliary(CDC *pdc, CPoint start, CPoint end)
