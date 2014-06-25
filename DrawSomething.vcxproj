@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChildView.h" />
+    <ClInclude Include="sConnector.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="DrawSomething.h" />
     <ClInclude Include="sPolygon.h" />
@@ -119,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChildView.cpp" />
+    <ClCompile Include="sConnector.cpp" />
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="DrawSomething.cpp" />
     <ClCompile Include="sPolygon.cpp" />
