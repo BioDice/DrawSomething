@@ -32,7 +32,6 @@ public:
 	
 	CPoint StartPoint, LastPoint;
 	Shape *currentShape;
-	Shape *selectedShapeObj;
 	enum CMouseMode { Ready, Clicked, Moving } MouseMode;
 	void Reset();
 

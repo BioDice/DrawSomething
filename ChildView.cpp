@@ -22,7 +22,7 @@ CChildView::CChildView()
 
 CChildView::~CChildView()
 {
-	delete Ctrl;
+	//delete Ctrl;
 }
 
 

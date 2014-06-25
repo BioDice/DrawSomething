@@ -8,7 +8,7 @@
 #endif
 
 #include "resource.h"       // main symbols
-
+#include "MainFrm.h"
 
 // CDrawSomethingApp:
 // See DrawSomething.cpp for the implementation of this class
@@ -24,6 +24,7 @@ public:
 	virtual BOOL InitInstance();
 	virtual int ExitInstance();
 // Implementation
+
 
 public:
 	afx_msg void OnAppAbout();

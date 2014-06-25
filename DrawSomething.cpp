@@ -5,8 +5,8 @@
 #include "stdafx.h"
 #include "afxwinappex.h"
 #include "afxdialogex.h"
-#include "DrawSomething.h"
 #include "MainFrm.h"
+#include "DrawSomething.h"
 #include "Controller.h"
 
 
@@ -127,6 +127,7 @@ BOOL CDrawSomethingApp::InitInstance()
 int CDrawSomethingApp::ExitInstance()
 {
 	//TODO: handle additional resources you may have added
+	delete m_pMainWnd;
 	AfxOleTerm(FALSE);
 	delete Ctrl;
 	return CWinApp::ExitInstance();

@@ -303,6 +303,15 @@ BEGIN
     AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
 END
 
+STRINGTABLE
+BEGIN
+    ID_SHAPE_RECTANGLE      "Rectangle"
+    ID_SHAPE_CIRCLE         "Circle"
+    ID_SHAPE_SQUARE         "Square"
+    ID_SHAPE_ELLIPSE        "Ellipse"
+    ID_SHAPE_POLYGON        "Polygon"
+END
+
 #endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
