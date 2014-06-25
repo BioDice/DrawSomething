@@ -35,6 +35,7 @@ void sCircle::DrawShape(CDC *pdc)
 	CPen* penne = new CPen(lineType, lineThickness, lineColor);
 	pdc->SelectObject(penne);
 	rect.SetRect(start.x, start.y, start.x + (end.x - start.x), start.y + (end.x - start.x));
+	rect.NormalizeRect();
 	pdc->Ellipse(rect);
 	PaintText(pdc);
 	delete penne;
@@ -45,6 +46,7 @@ void sCircle::IsSelected(CDC *pdc)
 	CPen* penne = new CPen(PS_DOT, 1, RGB(150,150,150));
 	pdc->SelectObject(penne);
 	pdc->Ellipse(rect);
+	rect.NormalizeRect();
 	PaintText(pdc);
 	delete penne;
 }

@@ -65,7 +65,6 @@ CDrawSomethingApp::CDrawSomethingApp()
 
 CDrawSomethingApp theApp;
 
-
 // CDrawSomethingApp initialization
 
 BOOL CDrawSomethingApp::InitInstance()
@@ -118,13 +117,10 @@ BOOL CDrawSomethingApp::InitInstance()
 		WS_OVERLAPPEDWINDOW | FWS_ADDTOTITLE, NULL,
 		NULL);
 
-
-
-
-
 	// The one and only window has been initialized, so show and update it
 	pFrame->ShowWindow(SW_SHOW);
 	pFrame->UpdateWindow();
+	
 	return TRUE;
 }
 
@@ -132,7 +128,7 @@ int CDrawSomethingApp::ExitInstance()
 {
 	//TODO: handle additional resources you may have added
 	AfxOleTerm(FALSE);
-
+	delete Ctrl;
 	return CWinApp::ExitInstance();
 }
 
@@ -277,5 +273,8 @@ void CDrawSomethingApp::DeleteShape()
 
 void CDrawSomethingApp::Connector()
 {
-	//Ctrl->UndoLastAction();
+	if (!Ctrl->GetConnectTool())
+		Ctrl->SetConnectTool(true);
+	else
+		Ctrl->SetConnectTool(false);
 }
